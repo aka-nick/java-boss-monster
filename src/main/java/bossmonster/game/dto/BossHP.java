@@ -13,7 +13,7 @@ public class BossHP {
         return new BossHP(inputHP);
     }
 
-    public Integer getHPAmount() {
+    public Integer get() {
         return hp;
     }
 }

@@ -6,8 +6,8 @@ public class Boss {
 
     public static Integer hp;
 
-    public void setStatus(BossHP bossHP) {
-        hp = bossHP.getHPAmount();
+    public void initHP(BossHP bossHP) {
+        hp = bossHP.get();
     }
 
 }

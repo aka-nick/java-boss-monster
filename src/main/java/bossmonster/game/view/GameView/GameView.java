@@ -1,16 +1,22 @@
 package bossmonster.game.view.GameView;
 
 import bossmonster.game.GameMessage;
+import bossmonster.game.dto.PlayerName;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
 import bossmonster.game.dto.BossHP;
 
 public class GameView {
 
+    // TODO : 각 메서드는, 유효성 검증 실패 시 해당 동작을 재시도하도록 해야 함
     public BossHP askBossHP() {
-        // TODO : 유효성 검증 실패 시 재시도하도록 해야 함
-        Output.println(GameMessage.BOSS_HP_INPUT.message());
+        Output.println(GameMessage.ASK_BOSS_HP.message());
         return BossHP.make(Input.readLine());
+    }
+
+    public PlayerName askPlayerName() {
+        Output.println(GameMessage.ASK_PLAYER_NAME.message());
+        return PlayerName.make(Input.readLine());
     }
 
 }
