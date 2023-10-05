@@ -1,10 +1,12 @@
 package bossmonster.game;
 
+import bossmonster.config.Dependency;
+import bossmonster.game.view.GameView.GameView;
+
 public class Game {
 
     public void play() {
-        System.out.println("Game.play");
-
+        GameView gameView = Dependency.gameView();
     }
 
 }
