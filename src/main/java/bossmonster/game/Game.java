@@ -12,7 +12,9 @@ public class Game {
 
         // 사용자로부터 보스몬스터의 HP양 입력받기
         setBossHP(gameView, boss);
-        
+
+        // 플레이어 생성
+        Player player = Dependency.player();
     }
 
     private static void setBossHP(GameView gameView, Boss boss) {
