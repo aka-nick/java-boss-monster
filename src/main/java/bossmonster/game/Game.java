@@ -8,6 +8,7 @@ public class Game {
     public void play() {
         GameView gameView = Dependency.gameView();
         Boss boss = Dependency.boss();
+        gameView.askBossHP(boss);
     }
 
 }
