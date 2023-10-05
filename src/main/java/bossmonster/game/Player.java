@@ -6,15 +6,40 @@ import bossmonster.game.dto.PlayerStatus;
 public class Player {
 
     private String name;
-    private Integer hp;
-    private Integer mp;
+    private Integer maxHP;
+    private Integer nowHP;
+    private Integer maxMP;
+    private Integer nowMP;
 
     public void writeName(PlayerName playerName) {
         name = playerName.get();
     }
 
     public void initStatus(PlayerStatus playerStatus) {
-        hp = playerStatus.getHP();
-        mp = playerStatus.getMP();
+        maxHP = playerStatus.getHP();
+        nowHP = maxHP;
+        maxMP = playerStatus.getMP();
+        nowMP = maxMP;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMaxHP() {
+        return maxHP.intValue();
+    }
+
+    public int getNowHP() {
+        return nowHP.intValue();
+    }
+
+    public int getMaxMP() {
+        return maxMP.intValue();
+    }
+
+    public int getNowMP() {
+        return nowMP.intValue();
+    }
+
 }

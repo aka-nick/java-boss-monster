@@ -4,10 +4,20 @@ import bossmonster.game.dto.BossHP;
 
 public class Boss {
 
-    public static Integer hp;
+    public Integer maxHP;
+    public Integer nowHP;
 
     public void initHP(BossHP bossHP) {
-        hp = bossHP.get();
+        maxHP = bossHP.get();
+        nowHP = maxHP;
+    }
+
+    public int getMaxHP() {
+        return maxHP.intValue();
+    }
+
+    public int getNowHP() {
+        return nowHP.intValue();
     }
 
 }

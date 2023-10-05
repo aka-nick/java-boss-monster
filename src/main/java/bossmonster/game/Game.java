@@ -5,6 +5,7 @@ import bossmonster.game.dto.BossHP;
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
 import bossmonster.game.view.GameView.GameView;
+import bossmonster.value.RaidField;
 
 public class Game {
 
@@ -47,6 +48,15 @@ public class Game {
     private void startBossRaid(GameView gameView, Boss boss, Player player) {
         // 레이드 시작 문구 출력하기
         gameView.announceStartRaid();
+
+        RaidStatus raidStatus = RaidStatus.START;
+        while (true) {
+            // 게임화면 출력하기 (보스 정보, 보스 그림, 플레이어 정보)
+            RaidField raidField = RaidField.make(boss, player);
+            gameView.draw(raidField, raidStatus);
+
+        }
+
     }
 
 }

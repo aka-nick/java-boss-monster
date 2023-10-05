@@ -1,11 +1,13 @@
 package bossmonster.game.view.GameView;
 
+import bossmonster.game.RaidStatus;
 import bossmonster.game.GameMessage;
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
 import bossmonster.game.dto.BossHP;
+import bossmonster.value.RaidField;
 
 public class GameView {
 
@@ -28,4 +30,28 @@ public class GameView {
     public void announceStartRaid() {
         Output.println(GameMessage.ANNOUNCE_BOSS_RAID.message());
     }
+
+    public void draw(RaidField raidField, RaidStatus raidStatus) {
+        String fieldStatus = """
+                ============================
+                BOSS HP [{bossNowHP}/{bossMaxHP}]
+                ____________________________
+                {bossFigure}
+                ____________________________
+                               
+                {playerName} HP [{playerNowHP}/{playerMaxHP}] MP [{playerNowMP}/{playerMaxMP}]
+                ============================
+                """
+                .replace("{bossNowHP}", String.valueOf(raidField.bossNowHP()))
+                .replace("{bossMaxHP}", String.valueOf(raidField.bossMaxHP()))
+                .replace("{bossFigure}", raidStatus.bossFigure())
+                .replace("{playerName}", raidField.playerName())
+                .replace("{playerNowHP}", String.valueOf(raidField.playerNowHp()))
+                .replace("{playerMaxHP}", String.valueOf(raidField.playerMaxHP()))
+                .replace("{playerNowMP}", String.valueOf(raidField.playerNowMP()))
+                .replace("{playerMaxMP}", String.valueOf(raidField.playerMaxMP()));
+
+        Output.println(fieldStatus);
+    }
+
 }
