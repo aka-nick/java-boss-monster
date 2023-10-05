@@ -1,16 +1,16 @@
 package bossmonster.game.view.GameView;
 
-import bossmonster.game.Boss;
 import bossmonster.game.GameMessage;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
+import bossmonster.game.dto.BossHP;
 
 public class GameView {
 
-    public void askBossHP(Boss boss) {
+    public BossHP askBossHP() {
+        // TODO : 유효성 검증 실패 시 재시도하도록 해야 함
         Output.println(GameMessage.BOSS_HP_INPUT.message());
-        String bossHP = Input.readLine();
-        boss.setHP(bossHP);
+        return BossHP.make(Input.readLine());
     }
 
 }
