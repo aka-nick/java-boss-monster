@@ -2,6 +2,7 @@ package bossmonster.game.view.GameView;
 
 import bossmonster.game.GameMessage;
 import bossmonster.game.dto.PlayerName;
+import bossmonster.game.dto.PlayerStatus;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
 import bossmonster.game.dto.BossHP;
@@ -19,4 +20,8 @@ public class GameView {
         return PlayerName.make(Input.readLine());
     }
 
+    public PlayerStatus askPlayerStatus() {
+        Output.println(GameMessage.ASK_PLAYER_STATUS.message());
+        return PlayerStatus.make(Input.readLine());
+    }
 }
