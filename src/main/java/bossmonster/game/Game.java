@@ -25,6 +25,8 @@ public class Game {
         // 사용자로부터 플레이어의 HP,MP 입력받기
         initPlayerStatus(gameView, player);
 
+        // 보스레이드 시작하기
+        startBossRaid(gameView, boss, player);
     }
 
     private static void initBossHP(GameView gameView, Boss boss) {
@@ -40,6 +42,11 @@ public class Game {
     private static void initPlayerStatus(GameView gameView, Player player) {
         PlayerStatus playerStatus = gameView.askPlayerStatus();
         player.initStatus(playerStatus);
+    }
+
+    private void startBossRaid(GameView gameView, Boss boss, Player player) {
+        // 레이드 시작 문구 출력하기
+        gameView.announceStartRaid();
     }
 
 }

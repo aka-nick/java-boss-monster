@@ -24,4 +24,8 @@ public class GameView {
         Output.println(GameMessage.ASK_PLAYER_STATUS.message());
         return PlayerStatus.make(Input.readLine());
     }
+
+    public void announceStartRaid() {
+        Output.println(GameMessage.ANNOUNCE_BOSS_RAID.message());
+    }
 }
