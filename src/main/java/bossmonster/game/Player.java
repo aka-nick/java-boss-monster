@@ -2,6 +2,7 @@ package bossmonster.game;
 
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
+import bossmonster.value.AttackDetails;
 
 public class Player {
 
@@ -22,6 +23,10 @@ public class Player {
         nowMP = maxMP;
     }
 
+    public boolean canAttack(AttackDetails attackDetails) {
+        return 0 <= nowMP + attackDetails.getChangedMPAmount();
+    }
+
     public String getName() {
         return name;
     }
@@ -37,9 +42,28 @@ public class Player {
     public int getMaxMP() {
         return maxMP.intValue();
     }
-
     public int getNowMP() {
         return nowMP.intValue();
     }
 
+    public void attack(AttackDetails playersAttack) {
+        int changedMP = nowMP + playersAttack.getChangedMPAmount();
+
+        if (changedMP < 0) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_ENOUGH_MANA.message);
+        }
+        if (maxMP < changedMP) {
+            changedMP = maxMP;
+        }
+
+        nowMP = changedMP;
+    }
+
+    public void attacked(AttackDetails bossAttack) {
+        nowHP -= bossAttack.getDamageAmount();
+    }
+
+    public boolean isDead() {
+        return nowHP <= 0;
+    }
 }

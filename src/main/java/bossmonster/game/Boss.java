@@ -1,6 +1,8 @@
 package bossmonster.game;
 
 import bossmonster.game.dto.BossHP;
+import bossmonster.util.Randoms;
+import bossmonster.value.AttackDetails;
 
 public class Boss {
 
@@ -20,4 +22,15 @@ public class Boss {
         return nowHP.intValue();
     }
 
+    public void attacked(AttackDetails playersAttack) {
+        nowHP -= playersAttack.getDamageAmount();
+    }
+
+    public AttackDetails getAttackDetails() {
+        return new AttackDetails(Randoms.make(0, 20));
+    }
+
+    public boolean isDead() {
+        return nowHP <= 0;
+    }
 }

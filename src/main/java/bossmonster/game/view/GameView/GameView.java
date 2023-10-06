@@ -1,5 +1,9 @@
 package bossmonster.game.view.GameView;
 
+import bossmonster.game.AttackMethod;
+import bossmonster.game.Boss;
+import bossmonster.game.Player;
+import bossmonster.game.RaidMessage;
 import bossmonster.game.RaidStatus;
 import bossmonster.game.GameMessage;
 import bossmonster.game.dto.PlayerName;
@@ -7,6 +11,7 @@ import bossmonster.game.dto.PlayerStatus;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
 import bossmonster.game.dto.BossHP;
+import bossmonster.value.AttackDetails;
 import bossmonster.value.RaidField;
 
 public class GameView {
@@ -54,4 +59,17 @@ public class GameView {
         Output.println(fieldStatus);
     }
 
+    public AttackMethod askPlayersAttack() {
+        Output.println(RaidMessage.ASK_ATTACK_METHOD.message());
+        return AttackMethod
+                .select(Input.readLine());
+    }
+
+    public void announceNowTurn(String nowTurnDetails) {
+        Output.println(nowTurnDetails);
+    }
+
+    public void announceResult(String raidResultMessage) {
+        Output.println(raidResultMessage);
+    }
 }
