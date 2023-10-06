@@ -1,4 +1,4 @@
-package bossmonster.game;
+package bossmonster.game.enums;
 
 public enum RaidMessage {
 

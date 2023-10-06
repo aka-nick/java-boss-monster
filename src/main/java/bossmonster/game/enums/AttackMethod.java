@@ -1,4 +1,4 @@
-package bossmonster.game;
+package bossmonster.game.enums;
 
 import bossmonster.value.AttackDetails;
 import java.util.Arrays;

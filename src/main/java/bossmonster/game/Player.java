@@ -2,6 +2,7 @@ package bossmonster.game;
 
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
+import bossmonster.game.enums.ErrorMessage;
 import bossmonster.value.AttackDetails;
 
 public class Player {
@@ -50,7 +51,7 @@ public class Player {
         int changedMP = nowMP + playersAttack.getChangedMPAmount();
 
         if (changedMP < 0) {
-            throw new IllegalArgumentException(ErrorMessage.NOT_ENOUGH_MANA.message);
+            throw new IllegalArgumentException(ErrorMessage.NOT_ENOUGH_MANA.message());
         }
         if (maxMP < changedMP) {
             changedMP = maxMP;

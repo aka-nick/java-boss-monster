@@ -1,17 +1,14 @@
 package bossmonster.game.view;
 
-import bossmonster.game.AttackMethod;
-import bossmonster.game.Boss;
-import bossmonster.game.Player;
-import bossmonster.game.RaidMessage;
-import bossmonster.game.RaidStatus;
-import bossmonster.game.GameMessage;
+import bossmonster.game.enums.AttackMethod;
+import bossmonster.game.enums.RaidMessage;
+import bossmonster.game.enums.RaidStatus;
+import bossmonster.game.enums.GameMessage;
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
 import bossmonster.io.Input;
 import bossmonster.io.Output;
 import bossmonster.game.dto.BossHP;
-import bossmonster.value.AttackDetails;
 import bossmonster.value.RaidField;
 
 public class GameView {

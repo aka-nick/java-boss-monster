@@ -1,6 +1,6 @@
 package bossmonster.value;
 
-import bossmonster.game.AttackMethod;
+import bossmonster.game.enums.AttackMethod;
 import java.util.Objects;
 
 public class RaidTurnDetails {

@@ -1,4 +1,4 @@
-package bossmonster.game;
+package bossmonster.game.enums;
 
 public enum ErrorMessage {
     WRONG_ATTACK_METHOD("공격하셔야 합니다. 1 또는 2를 입력해주세요."),
@@ -10,4 +10,7 @@ public enum ErrorMessage {
         this.message = message;
     }
 
+    public String message() {
+        return message;
+    }
 }
