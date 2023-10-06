@@ -5,7 +5,7 @@ import static java.util.Objects.isNull;
 import bossmonster.game.Boss;
 import bossmonster.game.Game;
 import bossmonster.game.Player;
-import bossmonster.game.view.GameView.GameView;
+import bossmonster.game.view.GameView;
 
 public class Dependency {
 

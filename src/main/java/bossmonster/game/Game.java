@@ -4,7 +4,7 @@ import bossmonster.config.Dependency;
 import bossmonster.game.dto.BossHP;
 import bossmonster.game.dto.PlayerName;
 import bossmonster.game.dto.PlayerStatus;
-import bossmonster.game.view.GameView.GameView;
+import bossmonster.game.view.GameView;
 import bossmonster.value.AttackDetails;
 import bossmonster.value.RaidField;
 import bossmonster.value.RaidTurnDetails;

@@ -1,4 +1,4 @@
-package bossmonster.game.view.GameView;
+package bossmonster.game.view;
 
 import bossmonster.game.AttackMethod;
 import bossmonster.game.Boss;
