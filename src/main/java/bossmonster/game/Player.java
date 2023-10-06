@@ -24,10 +24,6 @@ public class Player {
         nowMP = maxMP;
     }
 
-    public boolean canAttack(AttackDetails attackDetails) {
-        return 0 <= nowMP + attackDetails.getChangedMPAmount();
-    }
-
     public String getName() {
         return name;
     }

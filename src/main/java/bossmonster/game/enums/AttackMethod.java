@@ -21,7 +21,6 @@ public enum AttackMethod {
     }
 
     public static AttackMethod select(String inputMethod) {
-        // TODO : 입력된 inputMethod에 대한 유효성 검증 로직 필요
         return Arrays.stream(AttackMethod.values())
                 .filter(method -> method.methodNumber == Integer.parseInt(inputMethod))
                 .findAny()

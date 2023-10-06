@@ -1,5 +1,6 @@
 package bossmonster.game.view;
 
+import bossmonster.game.dto.PlayerAttackMethod;
 import bossmonster.game.enums.AttackMethod;
 import bossmonster.game.enums.RaidMessage;
 import bossmonster.game.enums.RaidStatus;
@@ -58,8 +59,8 @@ public class GameView {
 
     public AttackMethod askPlayersAttack() {
         Output.println(RaidMessage.ASK_ATTACK_METHOD.message());
-        return AttackMethod
-                .select(Input.readLine());
+        PlayerAttackMethod playerAttackMethod = PlayerAttackMethod.make(Input.readLine());
+        return AttackMethod.select(playerAttackMethod.get());
     }
 
     public void announceNowTurn(String nowTurnDetails) {
